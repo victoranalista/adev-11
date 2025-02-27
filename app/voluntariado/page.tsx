@@ -248,8 +248,8 @@ export default function VoluntariadoPage() {
                     <div key={ministerio.id} className="flex items-center space-x-2">
                       <Checkbox 
                         id={`ministerio-${ministerio.id}`} 
-                        checked={formData.ministerios.includes(ministerio.id)}
-                        onCheckedChange={(checked) => handleMinisterioChange(ministerio.id, checked === true)}
+                        checked={ministerio.id !== undefined && formData.ministerios.includes(ministerio.id as number)}
+                        onCheckedChange={(checked) => handleMinisterioChange(ministerio.id as number, checked === true)}
                       />
                       <label
                         htmlFor={`ministerio-${ministerio.id}`}
